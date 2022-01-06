@@ -1,36 +1,22 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 
-export default function PlayerVariant({ currentVariantHandler }) {
+export default function PlayerVariant({ currentVariantHandler, gameVariant }) {
   return (
     <div className="player">
-      <Button
-        variant="contained"
-        color="success"
-        onClick={() => {
-          currentVariantHandler('rock');
-        }}
-      >
-        Rock
-      </Button>
-      <Button
-        variant="contained"
-        color="success"
-        onClick={() => {
-          currentVariantHandler('paper');
-        }}
-      >
-        Paper
-      </Button>
-      <Button
-        variant="contained"
-        color="success"
-        onClick={() => {
-          currentVariantHandler('scissors');
-        }}
-      >
-        Scissors
-      </Button>
+      {gameVariant.map((elem) => {
+        return (
+          <Button
+            variant="contained"
+            color="success"
+            onClick={() => {
+              currentVariantHandler(elem);
+            }}
+          >
+            {elem}
+          </Button>
+        );
+      })}
     </div>
   );
 }

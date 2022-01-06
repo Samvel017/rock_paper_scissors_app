@@ -85,6 +85,7 @@ export default class App extends Component {
             {!this.state.gameEnded ? (
               <div>
                 <PlayerVariant
+                  gameVariant={this.state.gameVariant}
                   currentVariantHandler={this.currentVariantHandler}
                 />
               </div>
