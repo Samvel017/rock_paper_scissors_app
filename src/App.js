@@ -27,7 +27,6 @@ export default class App extends Component {
       gameEnded: true,
     });
     if (variant === item) {
-      console.log('DRAW', variant, '+', item);
 
       this.setState({
         gameResult: 'Draw',
@@ -37,7 +36,6 @@ export default class App extends Component {
       (variant === 'paper' && item === 'rock') ||
       (variant === 'scissors' && item === 'paper')
     ) {
-      console.log('WIN', variant, '+', item);
       this.setState({
         gameResult: 'Win',
       });
@@ -45,7 +43,6 @@ export default class App extends Component {
         score: this.state.score + 1,
       });
     } else {
-      console.log('LOSE', variant, '+', item);
 
       this.setState({
         gameResult: 'Lose',
@@ -70,9 +67,6 @@ export default class App extends Component {
     });
   };
   render() {
-    console.log(this.state.currentVariant, 'current Variant');
-    console.log(this.state.computerVariant, 'computer Variant');
-    console.log(this.state.gameResult, 'Game Result');
     return (
       <div className="App">
         <div className="app-container">
@@ -94,7 +88,6 @@ export default class App extends Component {
 
           {this.state.gameEnded ? (
             <div>
-              <div></div>
               <GameResult
                 gameResult={this.state.gameResult}
                 currentVariant={this.state.currentVariant}

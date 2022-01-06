@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 export default function PlayerVariant({ currentVariantHandler, gameVariant }) {
   return (
     <div className="player">
-      {gameVariant.map((elem) => {
+      {gameVariant.map((elem, index) => {
         return (
           <Button
             variant="contained"
@@ -12,6 +12,7 @@ export default function PlayerVariant({ currentVariantHandler, gameVariant }) {
             onClick={() => {
               currentVariantHandler(elem);
             }}
+            key={index}
           >
             {elem}
           </Button>
